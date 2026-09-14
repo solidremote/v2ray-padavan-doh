@@ -34,10 +34,10 @@ jobs:
           mv /opt/rt-n56u/trunk/images/*.trx /opt/bin/k2p.trx
 
           # jdc
-          ./clear_tree
-          sed -i 's/size_etc="6M"/size_etc="16M"/' user/scripts/dev_init.sh
-          fakeroot ./build_firmware_modify JDC-1
-          mv /opt/rt-n56u/trunk/images/*.trx /opt/bin/jdc.trx
+          #./clear_tree
+          #sed -i 's/size_etc="6M"/size_etc="16M"/' user/scripts/dev_init.sh
+          #fakeroot ./build_firmware_modify JDC-1
+          #mv /opt/rt-n56u/trunk/images/*.trx /opt/bin/jdc.trx
       - name: Upload artifact
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
