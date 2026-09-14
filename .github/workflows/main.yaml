@@ -38,8 +38,11 @@ jobs:
           sed -i 's/size_etc="6M"/size_etc="16M"/' user/scripts/dev_init.sh
           fakeroot ./build_firmware_modify JDC-1
           mv /opt/rt-n56u/trunk/images/*.trx /opt/bin/jdc.trx
-      - name: Upload firmware to Actions Artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload artifact
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          name: padavan-firmware
-          path: /opt/bin/*.trx
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: false
+          files: |
+            /opt/bin/*.trx
