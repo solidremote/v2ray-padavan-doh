@@ -41,7 +41,7 @@ jobs:
       - name: Upload artifact
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          repo_token: "${{ secrets.UPLOAD_KEY }}"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: false
           files: |
