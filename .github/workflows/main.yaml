@@ -30,7 +30,7 @@ jobs:
           sed -i 's/found_app_smartdns = 1/found_app_smartdns = 0/' user/httpd/web_ex.c
 
           # yk-l1
-          wget https://raw.githubusercontent.com/felix-fly/v2ray-padavan-doh/master/yk-l1.config -O configs/templates/YK-L1.config
+          wget https://raw.githubusercontent.com/solidremote/v2ray-padavan-doh/master/yk-l1.config -O configs/templates/YK-L1.config
           fakeroot ./build_firmware_modify YK-L1
           mv /opt/rt-n56u/trunk/images/*.trx /opt/bin/yk-l1.trx
           
